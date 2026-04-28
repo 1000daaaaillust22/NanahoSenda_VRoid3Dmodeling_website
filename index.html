@@ -936,6 +936,19 @@
                     <div class="space-y-3">
                         <label class="font-bold text-sm block text-gray-700">希望着手月 <span class="text-red-500 text-xs ml-1">必須</span></label>
                         <div class="space-y-3">
+                             <label class="cursor-pointer relative block bg-white">
+                                <input type="radio" name="schedule" value="2027-02" class="custom-radio sr-only" required>
+                                <div class="border-2 border-gray-200 rounded-xl p-4 transition-colors hover:border-orange-200 flex items-start">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3 mt-0.5 flex-shrink-0 transition-colors flex items-center justify-center">
+                                        <div class="w-2 h-2 rounded-full bg-white"></div>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-gray-900">2026年10月着手 / 2026年11月末納品</div>
+                                        <div class="payment-term text-xs font-bold text-orange-600 mt-2 hidden">支払い期限：2026年8月末まで</div>
+                                    </div>
+                                </div>
+                            </label>
+
                             <label class="cursor-pointer relative block bg-white">
                                 <input type="radio" name="schedule" value="2026-12" class="custom-radio sr-only" required>
                                 <div class="border-2 border-gray-200 rounded-xl p-4 transition-colors hover:border-orange-200 flex items-start">
@@ -1810,6 +1823,7 @@
             const getVal = (name) => formData.get(name) || '未入力/未選択';
             
             const scheduleMap = {
+                '2026-10': '2026年10月着手 / 2026年11月末納品',
                 '2026-12': '2026年12月着手 / 2027年2月中旬納品',
                 '2027-02': '2027年2月着手 / 2027年3月末納品',
                 '2027-04-after': '2027年4月着手以降'
