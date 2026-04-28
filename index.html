@@ -430,7 +430,7 @@
                             <h4 class="font-bold text-lg mb-1 text-gray-900">Vデビュー応援セット</h4>
                             <p class="text-2xl font-bold text-orange-600">12万円〜</p>
                         </div>
-                        <a href="https://note.com/1000_daaaa/n/n787edf70fc33?sub_rt=share_pb" target="_blank" rel="noopener noreferrer" class="mt-4 md:mt-0 inline-flex items-center justify-center bg-white text-orange-600 border border-orange-200 px-5 py-2.5 rounded-full text-sm font-bold hover:bg-orange-100 transition shadow-sm">
+                        <a href="https://note.com/1000_daaaa/n/n787edf70fc33?sub_rt=share_sb" target="_blank" rel="noopener noreferrer" class="mt-4 md:mt-0 inline-flex items-center justify-center bg-white text-orange-600 border border-orange-200 px-5 py-2.5 rounded-full text-sm font-bold hover:bg-orange-100 transition shadow-sm">
                             提携イラストレーターはこちら <i data-lucide="external-link" class="w-3 h-3 ml-1.5"></i>
                         </a>
                     </div>
@@ -926,18 +926,44 @@
 
             <form id="simulation-form" class="space-y-8">
                 
-                <!-- Section 1: Schedule -->
+                <!-- Section 1: Client Type (New) -->
                 <section class="bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 form-section">
                     <h4 class="text-lg font-bold text-gray-900 mb-5 flex items-center border-b border-gray-200 pb-3">
                         <span class="bg-gray-800 text-white rounded w-6 h-6 inline-flex items-center justify-center text-xs mr-3">1</span>
+                        ご依頼区分
+                    </h4>
+                    
+                    <div class="mb-2">
+                        <label class="font-bold text-sm block text-gray-700 mb-2">ご依頼区分 <span class="text-red-500 text-xs ml-1">必須</span></label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="cursor-pointer relative bg-white rounded-xl">
+                                <input type="radio" name="clientType" value="individual" class="custom-radio sr-only" required>
+                                <div class="border-2 border-gray-200 rounded-xl py-3 px-4 text-center font-bold text-sm transition-colors hover:border-orange-200">
+                                    個人
+                                </div>
+                            </label>
+                            <label class="cursor-pointer relative bg-white rounded-xl">
+                                <input type="radio" name="clientType" value="corporate" class="custom-radio sr-only" required>
+                                <div class="border-2 border-gray-200 rounded-xl py-3 px-4 text-center font-bold text-sm transition-colors hover:border-orange-200">
+                                    企業・法人
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 2: Schedule -->
+                <section class="bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 form-section">
+                    <h4 class="text-lg font-bold text-gray-900 mb-5 flex items-center border-b border-gray-200 pb-3">
+                        <span class="bg-gray-800 text-white rounded w-6 h-6 inline-flex items-center justify-center text-xs mr-3">2</span>
                         スケジュール
                     </h4>
                     
                     <div class="space-y-3">
                         <label class="font-bold text-sm block text-gray-700">希望着手月 <span class="text-red-500 text-xs ml-1">必須</span></label>
                         <div class="space-y-3">
-                             <label class="cursor-pointer relative block bg-white">
-                                <input type="radio" name="schedule" value="2027-02" class="custom-radio sr-only" required>
+                            <label class="cursor-pointer relative block bg-white">
+                                <input type="radio" name="schedule" value="2026-10" class="custom-radio sr-only" required>
                                 <div class="border-2 border-gray-200 rounded-xl p-4 transition-colors hover:border-orange-200 flex items-start">
                                     <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3 mt-0.5 flex-shrink-0 transition-colors flex items-center justify-center">
                                         <div class="w-2 h-2 rounded-full bg-white"></div>
@@ -992,31 +1018,12 @@
                     </div>
                 </section>
 
-                <!-- Section 2: Request Details -->
+                <!-- Section 3: Request Details -->
                 <section class="bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 form-section">
                     <h4 class="text-lg font-bold text-gray-900 mb-5 flex items-center border-b border-gray-200 pb-3">
-                        <span class="bg-gray-800 text-white rounded w-6 h-6 inline-flex items-center justify-center text-xs mr-3">2</span>
+                        <span class="bg-gray-800 text-white rounded w-6 h-6 inline-flex items-center justify-center text-xs mr-3">3</span>
                         依頼内容
                     </h4>
-
-                    <!-- 区分 -->
-                    <div class="mb-6">
-                        <label class="font-bold text-sm block text-gray-700 mb-2">ご依頼区分 <span class="text-red-500 text-xs ml-1">必須</span></label>
-                        <div class="grid grid-cols-2 gap-3">
-                            <label class="cursor-pointer relative bg-white rounded-xl">
-                                <input type="radio" name="clientType" value="individual" class="custom-radio sr-only" required>
-                                <div class="border-2 border-gray-200 rounded-xl py-3 px-4 text-center font-bold text-sm transition-colors hover:border-orange-200">
-                                    個人
-                                </div>
-                            </label>
-                            <label class="cursor-pointer relative bg-white rounded-xl">
-                                <input type="radio" name="clientType" value="corporate" class="custom-radio sr-only" required>
-                                <div class="border-2 border-gray-200 rounded-xl py-3 px-4 text-center font-bold text-sm transition-colors hover:border-orange-200">
-                                    企業・法人
-                                </div>
-                            </label>
-                        </div>
-                    </div>
 
                     <!-- プラン -->
                     <div class="mb-6">
@@ -1156,10 +1163,10 @@
                     </div>
                 </section>
 
-                <!-- Section 3: Client Info -->
+                <!-- Section 4: Client Info -->
                 <section class="bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 form-section">
                     <h4 class="text-lg font-bold text-gray-900 mb-5 flex items-center border-b border-gray-200 pb-3">
-                        <span class="bg-gray-800 text-white rounded w-6 h-6 inline-flex items-center justify-center text-xs mr-3">3</span>
+                        <span class="bg-gray-800 text-white rounded w-6 h-6 inline-flex items-center justify-center text-xs mr-3">4</span>
                         お客様情報・ヒアリング
                     </h4>
 
@@ -1319,10 +1326,10 @@
                     </div>
                 </section>
 
-                <!-- Section 4: Payment -->
+                <!-- Section 5: Payment -->
                 <section class="bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 form-section">
                     <h4 class="text-lg font-bold text-gray-900 mb-5 flex items-center border-b border-gray-200 pb-3">
-                        <span class="bg-gray-800 text-white rounded w-6 h-6 inline-flex items-center justify-center text-xs mr-3">4</span>
+                        <span class="bg-gray-800 text-white rounded w-6 h-6 inline-flex items-center justify-center text-xs mr-3">5</span>
                         お支払い
                     </h4>
 
@@ -1386,10 +1393,10 @@
                     </div>
                 </section>
 
-                <!-- Section 5: Terms & Submit -->
+                <!-- Section 6: Terms & Submit -->
                 <section class="bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 form-section">
                     <h4 class="text-lg font-bold text-gray-900 mb-5 flex items-center border-b border-gray-200 pb-3">
-                        <span class="bg-gray-800 text-white rounded w-6 h-6 inline-flex items-center justify-center text-xs mr-3">5</span>
+                        <span class="bg-gray-800 text-white rounded w-6 h-6 inline-flex items-center justify-center text-xs mr-3">6</span>
                         その他・確認
                     </h4>
 
@@ -1441,10 +1448,10 @@
     </section>
 
     <!-- フローティング見積もりバー (モバイル/スクロール時用) -->
-    <div id="floating-price-bar" class="fixed bottom-0 left-0 w-full bg-gray-900 border-t border-gray-800 shadow-2xl z-40 transition-transform duration-300 translate-y-full flex justify-between items-center px-4 sm:px-6 py-3 pb-safe">
-        <div class="text-xs sm:text-sm text-gray-400 font-bold">概算見積もり</div>
-        <div class="text-xl sm:text-2xl font-bold text-white">
-            <span id="floating-estimated-price">0</span><span class="text-sm font-normal text-gray-400 ml-1">円〜</span>
+    <div id="floating-price-bar" class="fixed bottom-0 left-0 w-full bg-gray-900 border-t-4 border-orange-500 shadow-[0_-10px_20px_rgba(0,0,0,0.2)] z-40 transition-transform duration-300 translate-y-full flex justify-between items-center px-4 sm:px-8 py-4 sm:py-5 pb-safe">
+        <div class="text-sm sm:text-base text-gray-300 font-bold">現在の概算見積もり額</div>
+        <div class="text-2xl sm:text-3xl font-bold text-white tracking-wide">
+            <span id="floating-estimated-price">0</span><span class="text-base font-normal text-orange-400 ml-1">円〜</span>
         </div>
     </div>
 
