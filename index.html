@@ -275,14 +275,17 @@
 
                 <!-- Card 3 -->
                 <div class="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition relative overflow-hidden">
-                    <div class="absolute top-4 right-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">期間限定</div>
+                    <div class="absolute top-4 right-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm animate-pulse">期間限定</div>
                     <div class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-4 md:mb-6 text-orange-500">
                         <i data-lucide="sparkles" class="w-8 h-8"></i>
                     </div>
                     <h3 class="text-lg md:text-xl font-bold mb-1 leading-snug text-gray-900">提携イラストレータープラン</h3>
                     <p class="text-sm text-gray-500 mb-3">Vデビュー応援セット</p>
                     <p class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">12万円<span class="text-sm md:text-lg text-gray-500 font-normal">〜</span></p>
-                    <p class="text-xs text-gray-500 mb-6 md:mb-8 border-t border-gray-100 pt-4 w-full">デザイン + モデル + キービジュアル</p>
+                    <div class="text-xs text-gray-600 mb-6 md:mb-8 border-t border-gray-100 pt-4 w-full flex flex-col gap-1">
+                        <span>デザイン(三面図) + 3Dモデル</span>
+                        <span class="text-orange-600 font-bold bg-orange-50 py-1.5 rounded-md mt-1 border border-orange-100 flex items-center justify-center"><i data-lucide="gift" class="w-3 h-3 mr-1"></i>今だけキービジュアル付き</span>
+                    </div>
                     <button onclick="openDetail('detail-collab')" class="mt-auto w-full py-3 bg-gray-50 hover:bg-gray-100 text-gray-800 rounded-xl font-bold text-sm transition border border-gray-200">
                         詳細を見る
                     </button>
@@ -425,12 +428,16 @@
                     <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform duration-300 group-open:rotate-180"></i>
                 </summary>
                 <div class="px-6 pb-8 pt-2 border-t border-gray-100">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between bg-orange-50 border border-orange-100 text-gray-900 rounded-lg p-5 mb-6">
-                        <div>
-                            <h4 class="font-bold text-lg mb-1 text-gray-900">Vデビュー応援セット</h4>
+                    <div class="flex flex-col md:flex-row md:items-center justify-between bg-orange-50 border border-orange-100 text-gray-900 rounded-lg p-5 mb-6 relative overflow-hidden">
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-2 mb-1">
+                                <h4 class="font-bold text-lg text-gray-900">Vデビュー応援セット</h4>
+                                <span class="bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">期間限定特典あり</span>
+                            </div>
                             <p class="text-2xl font-bold text-orange-600">12万円〜</p>
+                            <p class="text-xs text-orange-800 mt-2 font-medium">基本の「キャラデザ(三面図)＋3Dモデル」に、<br class="md:hidden">今なら<span class="bg-white px-1 py-0.5 rounded mx-0.5 text-orange-600 font-bold border border-orange-200">キービジュアル</span>が無料で付いてきます！</p>
                         </div>
-                        <a href="https://note.com/1000_daaaa/n/n787edf70fc33?sub_rt=share_sb" target="_blank" rel="noopener noreferrer" class="mt-4 md:mt-0 inline-flex items-center justify-center bg-white text-orange-600 border border-orange-200 px-5 py-2.5 rounded-full text-sm font-bold hover:bg-orange-100 transition shadow-sm">
+                        <a href="https://note.com/1000_daaaa/n/n787edf70fc33?sub_rt=share_sb" target="_blank" rel="noopener noreferrer" class="mt-4 md:mt-0 inline-flex items-center justify-center bg-white text-orange-600 border border-orange-200 px-5 py-2.5 rounded-full text-sm font-bold hover:bg-orange-100 transition shadow-sm relative z-10">
                             提携イラストレーターはこちら <i data-lucide="external-link" class="w-3 h-3 ml-1.5"></i>
                         </a>
                     </div>
@@ -440,7 +447,13 @@
                         <tbody class="divide-y divide-gray-100">
                             <tr><td class="py-2.5 px-4 flex items-start"><span class="text-orange-500 font-bold mr-2">○</span>キャラクターデザイン</td></tr>
                             <tr><td class="py-2.5 px-4 flex items-start bg-gray-50/50"><span class="text-orange-500 font-bold mr-2">○</span>三面図</td></tr>
-                            <tr><td class="py-2.5 px-4 flex items-start"><span class="text-orange-500 font-bold mr-2">○</span>キービジュアル</td></tr>
+                            <tr class="bg-orange-50"><td class="py-3 px-4 flex items-start border-l-4 border-orange-400">
+                                <span class="text-orange-500 font-bold mr-2 mt-0.5">○</span>
+                                <div>
+                                    <span class="font-bold text-orange-700 block sm:inline">キービジュアル</span>
+                                    <span class="text-[10px] bg-orange-500 text-white px-2 py-0.5 rounded-full font-bold sm:ml-2 mt-1 sm:mt-0 inline-block">期間限定 特典</span>
+                                </div>
+                            </td></tr>
                             <tr><td class="py-2.5 px-4 flex items-start bg-gray-50/50"><span class="text-orange-500 font-bold mr-2">○</span>VRM形式(0.x) 納品</td></tr>
                             <tr><td class="py-2.5 px-4 flex items-start"><span class="text-orange-500 font-bold mr-2">○</span>パーフェクトシンク設定（あり・なしを選べます）</td></tr>
                             <tr><td class="py-2.5 px-4 flex items-start bg-gray-50/50"><span class="text-orange-500 font-bold mr-2">○</span>Unity / Blender調整</td></tr>
@@ -962,54 +975,66 @@
                     <div class="space-y-3">
                         <label class="font-bold text-sm block text-gray-700">希望着手月 <span class="text-red-500 text-xs ml-1">必須</span></label>
                         <div class="space-y-3">
-                            <label class="cursor-pointer relative block bg-white">
+                            <label class="cursor-pointer relative block bg-white schedule-option" data-value="2026-10">
                                 <input type="radio" name="schedule" value="2026-10" class="custom-radio sr-only" required>
-                                <div class="border-2 border-gray-200 rounded-xl p-4 transition-colors hover:border-orange-200 flex items-start">
+                                <div class="border-2 border-gray-200 rounded-xl p-4 transition-colors hover:border-orange-200 flex items-start option-container">
                                     <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3 mt-0.5 flex-shrink-0 transition-colors flex items-center justify-center">
                                         <div class="w-2 h-2 rounded-full bg-white"></div>
                                     </div>
-                                    <div>
-                                        <div class="font-bold text-gray-900">2026年10月着手 / 2026年11月末納品</div>
+                                    <div class="w-full">
+                                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full">
+                                            <div class="font-bold text-gray-900 schedule-title">2026年10月着手 / 2026年11月末納品</div>
+                                            <div class="stock-badge mt-1 sm:mt-0 inline-block px-2 py-0.5 text-xs font-bold rounded-full hidden"></div>
+                                        </div>
+                                        <div class="text-xs text-gray-500 mt-1 schedule-desc empty:hidden"></div>
                                         <div class="payment-term text-xs font-bold text-orange-600 mt-2 hidden">支払い期限：2026年8月末まで</div>
                                     </div>
                                 </div>
                             </label>
 
-                            <label class="cursor-pointer relative block bg-white">
+                            <label class="cursor-pointer relative block bg-white schedule-option" data-value="2026-12">
                                 <input type="radio" name="schedule" value="2026-12" class="custom-radio sr-only" required>
-                                <div class="border-2 border-gray-200 rounded-xl p-4 transition-colors hover:border-orange-200 flex items-start">
+                                <div class="border-2 border-gray-200 rounded-xl p-4 transition-colors hover:border-orange-200 flex items-start option-container">
                                     <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3 mt-0.5 flex-shrink-0 transition-colors flex items-center justify-center">
                                         <div class="w-2 h-2 rounded-full bg-white"></div>
                                     </div>
-                                    <div>
-                                        <div class="font-bold text-gray-900">2026年12月着手 / 2027年2月中旬納品</div>
-                                        <div class="text-xs text-gray-500 mt-1">年末年始の休暇をいただくため納品を2月中旬頃に変更しております。</div>
+                                    <div class="w-full">
+                                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full">
+                                            <div class="font-bold text-gray-900 schedule-title">2026年12月着手 / 2027年2月中旬納品</div>
+                                            <div class="stock-badge mt-1 sm:mt-0 inline-block px-2 py-0.5 text-xs font-bold rounded-full hidden"></div>
+                                        </div>
+                                        <div class="text-xs text-gray-500 mt-1 schedule-desc empty:hidden">年末年始の休暇をいただくため納品を2月中旬頃に変更しております。</div>
                                         <div class="payment-term text-xs font-bold text-orange-600 mt-2 hidden">支払い期限：2026年10月末まで</div>
                                     </div>
                                 </div>
                             </label>
 
-                            <label class="cursor-pointer relative block bg-white">
+                            <label class="cursor-pointer relative block bg-white schedule-option" data-value="2027-02">
                                 <input type="radio" name="schedule" value="2027-02" class="custom-radio sr-only" required>
-                                <div class="border-2 border-gray-200 rounded-xl p-4 transition-colors hover:border-orange-200 flex items-start">
+                                <div class="border-2 border-gray-200 rounded-xl p-4 transition-colors hover:border-orange-200 flex items-start option-container">
                                     <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3 mt-0.5 flex-shrink-0 transition-colors flex items-center justify-center">
                                         <div class="w-2 h-2 rounded-full bg-white"></div>
                                     </div>
-                                    <div>
-                                        <div class="font-bold text-gray-900">2027年2月着手 / 2027年3月末納品</div>
+                                    <div class="w-full">
+                                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full">
+                                            <div class="font-bold text-gray-900 schedule-title">2027年2月着手 / 2027年3月末納品</div>
+                                            <div class="stock-badge mt-1 sm:mt-0 inline-block px-2 py-0.5 text-xs font-bold rounded-full hidden"></div>
+                                        </div>
+                                        <div class="text-xs text-gray-500 mt-1 schedule-desc empty:hidden"></div>
                                         <div class="payment-term text-xs font-bold text-orange-600 mt-2 hidden">支払い期限：2026年12月末まで</div>
                                     </div>
                                 </div>
                             </label>
 
-                            <label class="cursor-pointer relative block bg-white">
+                            <label class="cursor-pointer relative block bg-white schedule-option" data-value="2027-04-after">
                                 <input type="radio" name="schedule" value="2027-04-after" class="custom-radio sr-only" required>
-                                <div class="border-2 border-gray-200 rounded-xl p-4 transition-colors hover:border-orange-200 flex items-start">
+                                <div class="border-2 border-gray-200 rounded-xl p-4 transition-colors hover:border-orange-200 flex items-start option-container">
                                     <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3 mt-0.5 flex-shrink-0 transition-colors flex items-center justify-center">
                                         <div class="w-2 h-2 rounded-full bg-white"></div>
                                     </div>
-                                    <div>
-                                        <div class="font-bold text-gray-900">2027年4月着手以降</div>
+                                    <div class="w-full">
+                                        <div class="font-bold text-gray-900 schedule-title">2027年4月着手以降</div>
+                                        <div class="text-xs text-gray-500 mt-1 schedule-desc empty:hidden">制作期間は約2か月いただいております。各着手月「2枠のみ」受付けております。</div>
                                         <div class="payment-term text-xs font-bold text-orange-600 mt-2 hidden">支払い期限：着手月の2ヶ月前まで</div>
                                     </div>
                                 </div>
@@ -1087,19 +1112,28 @@
                                 </div>
                             </div>
 
-                            <label class="cursor-pointer relative block bg-white">
-                                <input type="radio" name="plan" value="collab" class="custom-radio sr-only" required>
-                                <div class="border-2 border-gray-200 rounded-xl p-4 transition-colors hover:border-orange-200 flex items-center justify-between">
-                                    <div class="flex items-center">
-                                        <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0 transition-colors flex items-center justify-center"><div class="w-2 h-2 rounded-full bg-white"></div></div>
-                                        <div>
-                                            <div class="font-bold text-gray-900">提携イラストレータープラン</div>
-                                            <div class="text-xs text-gray-500">Vデビュー応援セット</div>
+                            <div>
+                                <label class="cursor-pointer relative block bg-white">
+                                    <input type="radio" name="plan" value="collab" class="custom-radio sr-only" required>
+                                    <div class="border-2 border-gray-200 rounded-xl p-4 transition-colors hover:border-orange-200 flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0 transition-colors flex items-center justify-center"><div class="w-2 h-2 rounded-full bg-white"></div></div>
+                                            <div>
+                                                <div class="font-bold text-gray-900">提携イラストレータープラン</div>
+                                                <div class="text-xs text-gray-500">Vデビュー応援セット</div>
+                                            </div>
                                         </div>
+                                        <span class="font-bold text-orange-600 text-sm price-display" data-plan="collab"></span>
                                     </div>
-                                    <span class="font-bold text-orange-600 text-sm price-display" data-plan="collab"></span>
+                                </label>
+                                <!-- 提携イラストレーター選択 -->
+                                <div id="collab-options-container" class="hidden mt-3 pl-4 border-l-2 border-orange-200">
+                                    <label class="font-bold text-xs block text-gray-700 mb-2">イラストレーターを選択してください <span class="text-red-500 ml-1">必須</span></label>
+                                    <select name="collabIllustrator" class="w-full border border-gray-300 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm">
+                                        <option value="">選択してください</option>
+                                    </select>
                                 </div>
-                            </label>
+                            </div>
                         </div>
                     </div>
 
@@ -1256,10 +1290,16 @@
                             </div>
                         </div>
 
-                        <div>
+                        <div id="illustrator-info-container">
                             <label class="font-bold text-sm block text-gray-700 mb-1">キャラクターデザイン担当<br class="sm:hidden">イラストレーターの名前と連絡先 <span class="text-red-500 text-xs ml-1">必須</span></label>
                             <p class="text-xs text-gray-500 mb-2">確認事項取得のために必要です。(SNSのURL等)</p>
                             <textarea name="illustratorInfo" rows="2" class="w-full border border-gray-300 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm" required></textarea>
+                        </div>
+
+                        <div id="char-design-image-container" class="hidden">
+                            <label class="font-bold text-sm block text-gray-700 mb-1">希望のキャラクターデザインのイメージをご記入ください。 <span class="text-red-500 text-xs ml-1">必須</span></label>
+                            <p class="text-xs text-gray-500 mb-2">事前に共有する内容になります。詳細はイラストレーターさんとヒアリングいただく予定です。</p>
+                            <textarea name="characterDesignImage" rows="3" class="w-full border border-gray-300 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm"></textarea>
                         </div>
 
                         <div>
@@ -1551,6 +1591,82 @@
         const companyField = document.getElementById('company-field');
         const partsOptionsContainer = document.getElementById('parts-options-container');
 
+        // ==========================================
+        // 提携イラストレーターの設定
+        // ※ 今後イラストレーターを追加する場合は、この配列に新しい項目を追加してください。
+        // 例: { value: 'id', name: '表示名' }
+        // ==========================================
+        const collabIllustrators = [
+            { value: 'naruna', name: 'N4I2uN4(ナルナ)' }
+        ];
+
+        function initIllustrators() {
+            const select = document.querySelector('select[name="collabIllustrator"]');
+            collabIllustrators.forEach(illustrator => {
+                const option = document.createElement('option');
+                option.value = illustrator.value;
+                option.textContent = illustrator.name;
+                select.appendChild(option);
+            });
+        }
+
+        // ==========================================
+        // 予約枠（在庫）の設定
+        // ※ scheduleStocks の数値を 0 にすると満枠になり、キャンセル待ちとして選択可能になります。
+        // ==========================================
+        const scheduleMaxStocks = {
+            '2026-10': 2,
+            '2026-12': 2,
+            '2027-02': 2
+        };
+        const scheduleStocks = {
+            '2026-10': 1, // 全2枠、残り1枠
+            '2026-12': 2, // 初期設定: 残り2枠
+            '2027-02': 2  // 初期設定: 残り2枠
+        };
+
+        function initScheduleOptions() {
+            const options = document.querySelectorAll('.schedule-option');
+            options.forEach(option => {
+                const value = option.dataset.value;
+                if (scheduleStocks.hasOwnProperty(value)) {
+                    const stock = scheduleStocks[value];
+                    const maxStock = scheduleMaxStocks[value];
+                    const input = option.querySelector('input');
+                    const badge = option.querySelector('.stock-badge');
+                    const title = option.querySelector('.schedule-title');
+                    const container = option.querySelector('.option-container');
+                    const desc = option.querySelector('.schedule-desc');
+
+                    if (stock === 0) {
+                        // 満枠時：グレーダウンするが選択は可能にし、キャンセル待ち扱いとする
+                        input.value = value + '-waitlist';
+                        container.classList.add('bg-gray-50');
+                        title.classList.remove('text-gray-900');
+                        title.classList.add('text-gray-500');
+                        
+                        if (desc) {
+                            desc.innerHTML = '<span class="font-bold text-orange-600 block mb-1">この着手月のキャンセル待ちをする</span>キャンセルがあった場合、優先してご連絡をさせていただきます。';
+                        }
+                        
+                        badge.textContent = '満枠対応中！';
+                        badge.classList.remove('hidden');
+                        badge.classList.add('bg-gray-300', 'text-gray-600');
+                    } else {
+                        // 在庫がある場合の表示
+                        badge.textContent = `全${maxStock}枠（残り${stock}枠）`;
+                        badge.classList.remove('hidden');
+                        
+                        if (stock === 1) {
+                            badge.classList.add('bg-red-100', 'text-red-600');
+                        } else {
+                            badge.classList.add('bg-orange-100', 'text-orange-600');
+                        }
+                    }
+                }
+            });
+        }
+
         // Floating Bar visibility logic
         window.addEventListener('scroll', () => {
             const resultRect = resultSection.getBoundingClientRect();
@@ -1603,21 +1719,54 @@
             }
         }
 
-        // Logic to toggle parts details options
-        function togglePartsOptions() {
+        // Logic to toggle plan specific options (parts details, collab illustrator) and specific client info
+        function togglePlanSpecificOptions() {
             const clientType = document.querySelector('input[name="clientType"]:checked')?.value;
             const plan = document.querySelector('input[name="plan"]:checked')?.value;
-            const radios = document.querySelectorAll('input[name="partsDetail"]');
+            
+            // Parts options
+            const partsRadios = document.querySelectorAll('input[name="partsDetail"]');
             
             if (clientType === 'individual' && plan === 'parts') {
                 partsOptionsContainer.classList.remove('hidden');
-                radios.forEach(r => r.required = true);
+                partsRadios.forEach(r => r.required = true);
             } else {
                 partsOptionsContainer.classList.add('hidden');
-                radios.forEach(r => {
+                partsRadios.forEach(r => {
                     r.required = false;
                     r.checked = false;
                 });
+            }
+
+            // Collab Illustrator options & Client Info changes
+            const collabContainer = document.getElementById('collab-options-container');
+            const collabSelect = document.querySelector('select[name="collabIllustrator"]');
+            const illustInfoContainer = document.getElementById('illustrator-info-container');
+            const illustInfoInput = document.querySelector('textarea[name="illustratorInfo"]');
+            const charDesignContainer = document.getElementById('char-design-image-container');
+            const charDesignInput = document.querySelector('textarea[name="characterDesignImage"]');
+
+            if (plan === 'collab') {
+                collabContainer.classList.remove('hidden');
+                collabSelect.required = true;
+
+                illustInfoContainer.classList.add('hidden');
+                illustInfoInput.required = false;
+                illustInfoInput.value = ''; // clear
+                
+                charDesignContainer.classList.remove('hidden');
+                charDesignInput.required = true;
+            } else {
+                collabContainer.classList.add('hidden');
+                collabSelect.required = false;
+                collabSelect.value = ''; // clear
+
+                illustInfoContainer.classList.remove('hidden');
+                illustInfoInput.required = true;
+                
+                charDesignContainer.classList.add('hidden');
+                charDesignInput.required = false;
+                charDesignInput.value = ''; // clear
             }
         }
 
@@ -1831,9 +1980,13 @@
             
             const scheduleMap = {
                 '2026-10': '2026年10月着手 / 2026年11月末納品',
+                '2026-10-waitlist': '2026年10月着手 / 2026年11月末納品（キャンセル待ち）',
                 '2026-12': '2026年12月着手 / 2027年2月中旬納品',
+                '2026-12-waitlist': '2026年12月着手 / 2027年2月中旬納品（キャンセル待ち）',
                 '2027-02': '2027年2月着手 / 2027年3月末納品',
-                '2027-04-after': '2027年4月着手以降'
+                '2027-02-waitlist': '2027年2月着手 / 2027年3月末納品（キャンセル待ち）',
+                '2027-04-after': '2027年4月着手以降',
+                '2027-04-after-waitlist': '2027年4月着手以降（キャンセル待ち）'
             };
             const planMap = { 'full': '全身モデリング', 'parts': '頭部・衣装のみ', 'collab': '提携イラストレータープラン' };
             const clientTypeMap = { 'individual': '個人', 'corporate': '企業・法人' };
@@ -1847,6 +2000,10 @@
                     'senda_outfit': '千田ななほ制作モデル - 衣装のみ'
                 };
                 planText += ` (${partsDetailMap[getVal('partsDetail')]})`;
+            } else if (getVal('plan') === 'collab' && getVal('collabIllustrator') !== '未入力/未選択' && getVal('collabIllustrator') !== '') {
+                const selectEl = form.querySelector('select[name="collabIllustrator"]');
+                const selectedIllustratorName = selectEl.options[selectEl.selectedIndex]?.text;
+                planText += ` (担当: ${selectedIllustratorName})`;
             }
 
             let optionsText = Array.from(formData.getAll('options')).map(val => {
@@ -1887,7 +2044,12 @@
             text += `SNS URL: ${getVal('snsUrl')}\n`;
             text += `資料URL: ${referenceText}\n`;
             text += `身長: ${getVal('height')}\nイメージカラー: ${getVal('themeColor')}\n連絡方法: ${contactText}\n`;
-            text += `担当イラストレーター様:\n${getVal('illustratorInfo')}\n\n`;
+            
+            if (getVal('plan') === 'collab') {
+                text += `希望キャラクターデザインイメージ:\n${getVal('characterDesignImage')}\n\n`;
+            } else {
+                text += `担当イラストレーター様:\n${getVal('illustratorInfo')}\n\n`;
+            }
             
             text += `[お支払い]\n方法: ${paymentText}\n`;
             if(getVal('paymentMethod') === 'bank_transfer') {
@@ -1937,7 +2099,7 @@
         // Form Event Listeners
         form.addEventListener('change', () => {
             updatePlanPrices();
-            togglePartsOptions();
+            togglePlanSpecificOptions();
             toggleReferenceDataOptions();
             toggleContactInfo();
             togglePaymentDetails();
@@ -1988,6 +2150,8 @@
         });
 
         // Initial setup
+        initIllustrators();
+        initScheduleOptions();
         updatePlanPrices();
         toggleContactInfo(); // Set initial state for contact info
         toggleReferenceDataOptions(); // Set initial state for reference data
