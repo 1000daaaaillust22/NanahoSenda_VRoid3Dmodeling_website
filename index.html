@@ -1297,9 +1297,24 @@
                         </div>
 
                         <div id="char-design-image-container" class="hidden">
-                            <label class="font-bold text-sm block text-gray-700 mb-1">希望のキャラクターデザインのイメージをご記入ください。 <span class="text-red-500 text-xs ml-1">必須</span></label>
-                            <p class="text-xs text-gray-500 mb-2">事前に共有する内容になります。詳細はイラストレーターさんとヒアリングいただく予定です。</p>
-                            <textarea name="characterDesignImage" rows="3" class="w-full border border-gray-300 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm"></textarea>
+                            <label class="cursor-pointer relative flex items-start mb-4 bg-white border border-gray-200 p-3 rounded-lg hover:border-orange-200 transition-colors">
+                                <input type="checkbox" name="hasCharacterDesign" class="custom-checkbox sr-only">
+                                <div class="checkbox-icon w-5 h-5 rounded border-2 border-gray-300 mr-3 mt-0.5 flex-shrink-0 transition-colors relative bg-white"></div>
+                                <div class="text-sm font-bold text-gray-800">
+                                    既にキャラクターデザインをしてもらっている
+                                </div>
+                            </label>
+
+                            <div id="char-design-input-wrapper">
+                                <label class="font-bold text-sm block text-gray-700 mb-1">希望のキャラクターデザインのイメージをご記入ください。 <span class="text-red-500 text-xs ml-1">必須</span></label>
+                                <p class="text-xs text-gray-500 mb-2">事前に共有する内容になります。詳細はイラストレーターさんとヒアリングいただく予定です。</p>
+                                <textarea name="characterDesignImage" rows="3" class="w-full border border-gray-300 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm"></textarea>
+                            </div>
+
+                            <div id="char-design-discount-msg" class="hidden bg-orange-50 border border-orange-100 p-4 rounded-lg">
+                                <p class="font-bold text-orange-600 text-sm mb-1">デザイン代を引いた割引額「10万円～」でご対応させていただきます。</p>
+                                <p class="text-xs text-gray-600">※新規衣装をご希望の場合は別途デザイン代が必要になりますのでご留意いただけますと幸いです。</p>
+                            </div>
                         </div>
 
                         <div>
@@ -1597,8 +1612,8 @@
         // 例: { value: 'id', name: '表示名' }
         // ==========================================
         const collabIllustrators = [
-            { value: 'naruna', name: 'N4I2uN4(ナルナ)' }
-            { value: 'naruna', name: '追茂あゆむ(オイモ アユム)' }
+            { value: 'naruna', name: 'N4I2uN4(ナルナ)' },
+            { value: 'oimo_ayumu', name: '追茂あゆむ(オイモ アユム)' }
         ];
 
         function initIllustrators() {
@@ -1689,12 +1704,15 @@
         // Logic to update prices display based on client type
         function updatePlanPrices() {
             const clientType = document.querySelector('input[name="clientType"]:checked')?.value || 'individual';
+            const hasDesign = document.querySelector('input[name="hasCharacterDesign"]')?.checked;
             
             document.querySelectorAll('.price-display').forEach(el => {
                 const plan = el.dataset.plan;
                 if (clientType === 'individual') {
                     if(plan === 'parts') {
                         el.textContent = '20,000円〜'; // 詳細で変わるが、最低価格を表示
+                    } else if (plan === 'collab') {
+                        el.textContent = hasDesign ? '100,000円〜' : '120,000円〜';
                     } else {
                         el.textContent = prices.individual[plan].toLocaleString() + '円〜';
                     }
@@ -1717,6 +1735,27 @@
                 if (chkWarudo) chkWarudo.checked = false;
             } else {
                 optWarudoContainer.classList.remove('hidden');
+            }
+        }
+
+        // Logic to toggle character design specific inputs
+        function toggleCharDesignOptions() {
+            const hasDesignCheckbox = document.querySelector('input[name="hasCharacterDesign"]');
+            const inputWrapper = document.getElementById('char-design-input-wrapper');
+            const discountMsg = document.getElementById('char-design-discount-msg');
+            const charDesignInput = document.querySelector('textarea[name="characterDesignImage"]');
+            const plan = document.querySelector('input[name="plan"]:checked')?.value;
+
+            if (hasDesignCheckbox && hasDesignCheckbox.checked) {
+                inputWrapper.classList.add('hidden');
+                charDesignInput.required = false;
+                discountMsg.classList.remove('hidden');
+            } else {
+                inputWrapper.classList.remove('hidden');
+                if (plan === 'collab') {
+                    charDesignInput.required = true;
+                }
+                discountMsg.classList.add('hidden');
             }
         }
 
@@ -1746,6 +1785,7 @@
             const illustInfoInput = document.querySelector('textarea[name="illustratorInfo"]');
             const charDesignContainer = document.getElementById('char-design-image-container');
             const charDesignInput = document.querySelector('textarea[name="characterDesignImage"]');
+            const hasDesignCheckbox = document.querySelector('input[name="hasCharacterDesign"]');
 
             if (plan === 'collab') {
                 collabContainer.classList.remove('hidden');
@@ -1756,7 +1796,7 @@
                 illustInfoInput.value = ''; // clear
                 
                 charDesignContainer.classList.remove('hidden');
-                charDesignInput.required = true;
+                toggleCharDesignOptions();
             } else {
                 collabContainer.classList.add('hidden');
                 collabSelect.required = false;
@@ -1768,6 +1808,7 @@
                 charDesignContainer.classList.add('hidden');
                 charDesignInput.required = false;
                 charDesignInput.value = ''; // clear
+                if(hasDesignCheckbox) hasDesignCheckbox.checked = false;
             }
         }
 
@@ -1925,6 +1966,9 @@
                         };
                         basePrice = partsPrices[partsDetail] || 0;
                         if(!partsDetail) showNote = true; // 詳細未選択時は注意書き
+                    } else if (plan === 'collab') {
+                        const hasDesign = document.querySelector('input[name="hasCharacterDesign"]')?.checked;
+                        basePrice = hasDesign ? 100000 : prices.individual[plan];
                     } else {
                         basePrice = prices.individual[plan];
                     }
@@ -2047,7 +2091,12 @@
             text += `身長: ${getVal('height')}\nイメージカラー: ${getVal('themeColor')}\n連絡方法: ${contactText}\n`;
             
             if (getVal('plan') === 'collab') {
-                text += `希望キャラクターデザインイメージ:\n${getVal('characterDesignImage')}\n\n`;
+                const hasDesign = form.querySelector('input[name="hasCharacterDesign"]')?.checked;
+                if (hasDesign) {
+                    text += `希望キャラクターデザインイメージ:\n既にデザインあり（割引適用）\n\n`;
+                } else {
+                    text += `希望キャラクターデザインイメージ:\n${getVal('characterDesignImage')}\n\n`;
+                }
             } else {
                 text += `担当イラストレーター様:\n${getVal('illustratorInfo')}\n\n`;
             }
@@ -2099,6 +2148,7 @@
 
         // Form Event Listeners
         form.addEventListener('change', () => {
+            toggleCharDesignOptions();
             updatePlanPrices();
             togglePlanSpecificOptions();
             toggleReferenceDataOptions();
