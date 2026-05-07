@@ -158,7 +158,6 @@
 
     <!-- ① ファーストビュー -->
     <section class="relative bg-white pt-20 pb-24 lg:pt-32 lg:pb-40 overflow-hidden">
-        <!-- Background decoration -->
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-orange-50 opacity-50 blur-3xl"></div>
         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-gray-50 opacity-50 blur-3xl"></div>
         
@@ -191,7 +190,6 @@
                 </h2>
             </div>
 
-            <!-- 表デザイン -->
             <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden mb-8">
                 <table class="w-full text-left text-sm md:text-base">
                     <tbody class="divide-y divide-gray-100">
@@ -247,7 +245,6 @@
                 </h2>
             </div>
 
-            <!-- スマホでは縦並び、PCでは3つ横並びのグリッド -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-sm md:max-w-none mx-auto">
                 <!-- Card 1 -->
                 <div class="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition">
@@ -275,7 +272,7 @@
 
                 <!-- Card 3 -->
                 <div class="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition relative overflow-hidden">
-                    <div class="absolute top-4 right-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm animate-pulse">期間限定</div>
+                    <div class="absolute top-4 right-4 bg-orange-500 text-white text-[10px] sm:text-xs font-bold px-2 py-1 rounded-full shadow-sm animate-pulse">期間限定</div>
                     <div class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-4 md:mb-6 text-orange-500">
                         <i data-lucide="sparkles" class="w-8 h-8"></i>
                     </div>
@@ -308,8 +305,6 @@
                     <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform duration-300 group-open:rotate-180"></i>
                 </summary>
                 <div class="px-6 pb-8 pt-2 border-t border-gray-100">
-                    
-                    <!-- 個人様 -->
                     <div class="mb-10">
                         <h4 class="font-bold text-xl mb-3 border-b-2 border-gray-100 pb-2">［個人様］7万円〜</h4>
                         <p class="text-sm text-gray-600 mb-6">衣装等の複雑さによって追加料金が必要な場合があります。その際は必ずお見積り時にご相談させていただきます。</p>
@@ -336,7 +331,6 @@
                         </table>
                     </div>
 
-                    <!-- 企業/法人様 -->
                     <div>
                         <h4 class="font-bold text-xl mb-3 border-b-2 border-gray-100 pb-2">［企業/法人様］20万円〜</h4>
                         <p class="text-sm text-gray-600 mb-6">著作権譲渡、.vroid形式データも含めます。<br>衣装で見えない肌の制作を含めます。（バストトップの描き込みの有無をお伝えください。）</p>
@@ -365,7 +359,7 @@
             </details>
 
             <!-- 頭部・衣装のみモデリング -->
-            <details id="detail-parts" class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden group" open>
+            <details id="detail-parts" class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden group">
                 <summary class="px-6 py-5 flex justify-between items-center bg-white hover:bg-gray-50 transition">
                     <h3 class="text-lg font-bold flex items-center">
                         <span class="w-2 h-6 bg-orange-500 rounded-full mr-3"></span>
@@ -670,17 +664,22 @@
 
     <!-- ⑨ 提出データ -->
     <section class="py-16 bg-white border-b border-gray-100">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-            <h2 class="text-xl font-bold text-gray-900 mb-4 flex justify-center items-center">
-                <i data-lucide="file-text" class="w-6 h-6 mr-2 text-orange-500"></i> 提出データについて
-            </h2>
-            <p class="text-sm text-gray-600 mb-6 max-w-xl mx-auto leading-relaxed">
-                モデリングに必要な提出データをまとめたPDFを作成いたしました！<br>
-                三面図などをイラストレーター様へご相談いただく際に、参考資料としてご活用いただけましたら幸いです。
-            </p>
-            <a href="https://drive.google.com/file/d/1oYvAG1SbP2Y1fneY9sVGU8ctddg3fWgJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gray-900 text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-gray-800 transition shadow-md">
-                資料PDFを見る <i data-lucide="download" class="w-4 h-4 ml-2"></i>
-            </a>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="bg-orange-50 border-2 border-orange-200 rounded-2xl p-8 text-center shadow-sm">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm">
+                    <i data-lucide="file-text" class="w-8 h-8 text-orange-500"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">
+                    提出データについて
+                </h2>
+                <p class="text-sm text-gray-700 mb-8 max-w-xl mx-auto leading-relaxed font-medium">
+                    モデリングに必要な提出データをまとめたPDFを作成いたしました。<br>
+                    三面図などをイラストレーター様へご相談いただく際に、参考資料としてご活用いただけますと幸いです。
+                </p>
+                <a href="https://drive.google.com/file/d/1oYvAG1SbP2Y1fneY9sVGU8ctddg3fWgJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-orange-500 text-white px-8 py-4 rounded-full text-sm font-bold hover:bg-orange-600 transition shadow-md hover:-translate-y-1 transform duration-200">
+                    資料PDFを見る <i data-lucide="download" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -881,7 +880,7 @@
                             </li>
                             <li>
                                 <strong>クレジット表記について</strong><br>
-                                モデル制作者（千田ななほ）の記載は任意といたします。クレジットを記載していただける場合は、励みになりますが、義務ではありません。
+                                モデル制作者（千田ななほ）の記載は任意といたします。クレジットを記載していた    だける場合は、励みになりますが、義務ではありません。
                             </li>
                             <li>
                                 <strong>著作人格権の取り扱いについて</strong><br>
@@ -1290,6 +1289,11 @@
                             </div>
                         </div>
 
+                        <div>
+                            <label class="font-bold text-sm block text-gray-700 mb-1">モデル公開予定時期 <span class="text-red-500 text-xs ml-1">必須</span></label>
+                            <input type="text" name="releaseDate" placeholder="例：2027年春頃、未定など" class="w-full border border-gray-300 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm" required>
+                        </div>
+
                         <div id="illustrator-info-container">
                             <label class="font-bold text-sm block text-gray-700 mb-1">キャラクターデザイン担当<br class="sm:hidden">イラストレーターの名前と連絡先 <span class="text-red-500 text-xs ml-1">必須</span></label>
                             <p class="text-xs text-gray-500 mb-2">確認事項取得のために必要です。(SNSのURL等)</p>
@@ -1472,7 +1476,7 @@
                     </label>
                 </section>
 
-                <!-- Section 6: Result & Submit Button -->
+                <!-- Section 7: Result & Submit Button -->
                 <div id="result-section" class="bg-gray-900 p-6 sm:p-8 rounded-2xl shadow-md border border-gray-800 text-center mt-8">
                     <p class="text-sm text-gray-400 font-bold mb-2">概算見積もり (目安)</p>
                     <div class="text-3xl sm:text-4xl font-bold text-white mb-2">
@@ -1608,8 +1612,6 @@
 
         // ==========================================
         // 提携イラストレーターの設定
-        // ※ 今後イラストレーターを追加する場合は、この配列に新しい項目を追加してください。
-        // 例: { value: 'id', name: '表示名' }
         // ==========================================
         const collabIllustrators = [
             { value: 'naruna', name: 'N4I2uN4(ナルナ)' },
@@ -1628,18 +1630,23 @@
 
         // ==========================================
         // 予約枠（在庫）の設定
-        // ※ scheduleStocks の数値を 0 にすると満枠になり、キャンセル待ちとして選択可能になります。
+        // ※ フロントエンドのみでの擬似的な在庫管理としてlocalStorageを使用
         // ==========================================
         const scheduleMaxStocks = {
             '2026-10': 2,
             '2026-12': 2,
             '2027-02': 2
         };
-        const scheduleStocks = {
-            '2026-10': 0, // 全2枠、残り1枠
-            '2026-12': 2, // 初期設定: 残り2枠
-            '2027-02': 2  // 初期設定: 残り2枠
-        };
+        
+        let scheduleStocks = JSON.parse(localStorage.getItem('senda_schedule_stocks'));
+        if (!scheduleStocks) {
+            scheduleStocks = {
+                '2026-10': 0, // ご要望により初期値を0（満枠）に設定
+                '2026-12': 2,
+                '2027-02': 2
+            };
+            localStorage.setItem('senda_schedule_stocks', JSON.stringify(scheduleStocks));
+        }
 
         function initScheduleOptions() {
             const options = document.querySelectorAll('.schedule-option');
@@ -1667,16 +1674,23 @@
                         
                         badge.textContent = '満枠対応中！';
                         badge.classList.remove('hidden');
-                        badge.classList.add('bg-gray-300', 'text-gray-600');
+                        badge.classList.add('bg-gray-300', 'text-gray-600', 'line-through', 'decoration-gray-400');
                     } else {
                         // 在庫がある場合の表示
+                        input.value = value; // リセット（キャンセル待ち等から戻った場合のため）
+                        container.classList.remove('bg-gray-50');
+                        title.classList.add('text-gray-900');
+                        title.classList.remove('text-gray-500');
+
                         badge.textContent = `全${maxStock}枠（残り${stock}枠）`;
-                        badge.classList.remove('hidden');
+                        badge.classList.remove('hidden', 'bg-gray-300', 'text-gray-600', 'line-through', 'decoration-gray-400');
                         
                         if (stock === 1) {
                             badge.classList.add('bg-red-100', 'text-red-600');
+                            badge.classList.remove('bg-orange-100', 'text-orange-600');
                         } else {
                             badge.classList.add('bg-orange-100', 'text-orange-600');
+                            badge.classList.remove('bg-red-100', 'text-red-600');
                         }
                     }
                 }
@@ -1701,7 +1715,7 @@
         });
 
 
-        // Logic to update prices display based on client type
+        // Logic to update prices display based on client type and design status
         function updatePlanPrices() {
             const clientType = document.querySelector('input[name="clientType"]:checked')?.value || 'individual';
             const hasDesign = document.querySelector('input[name="hasCharacterDesign"]')?.checked;
@@ -2088,7 +2102,7 @@
             if(getVal('clientType') === 'corporate') text += `会社名: ${getVal('companyName')}\n`;
             text += `SNS URL: ${getVal('snsUrl')}\n`;
             text += `資料URL: ${referenceText}\n`;
-            text += `身長: ${getVal('height')}\nイメージカラー: ${getVal('themeColor')}\n連絡方法: ${contactText}\n`;
+            text += `身長: ${getVal('height')}\nイメージカラー: ${getVal('themeColor')}\nモデル公開予定時期: ${getVal('releaseDate')}\n連絡方法: ${contactText}\n`;
             
             if (getVal('plan') === 'collab') {
                 const hasDesign = form.querySelector('input[name="hasCharacterDesign"]')?.checked;
@@ -2193,6 +2207,17 @@
             if(form.checkValidity()) {
                 generateText();
                 
+                // --- 擬似的な在庫減算処理 ---
+                const selectedSchedule = document.querySelector('input[name="schedule"]:checked')?.value;
+                if (selectedSchedule && !selectedSchedule.includes('waitlist') && scheduleStocks.hasOwnProperty(selectedSchedule)) {
+                    if (scheduleStocks[selectedSchedule] > 0) {
+                        scheduleStocks[selectedSchedule] -= 1;
+                        localStorage.setItem('senda_schedule_stocks', JSON.stringify(scheduleStocks));
+                        initScheduleOptions(); // 画面の表示を更新
+                    }
+                }
+                // ---------------------------
+
                 const url = 'https://forms.gle/iAageE4p4jCACYgv9';
                 window.open(url, '_blank');
             } else {
@@ -2204,6 +2229,7 @@
         initIllustrators();
         initScheduleOptions();
         updatePlanPrices();
+        togglePlanSpecificOptions();
         toggleContactInfo(); // Set initial state for contact info
         toggleReferenceDataOptions(); // Set initial state for reference data
         checkFormValidity();
