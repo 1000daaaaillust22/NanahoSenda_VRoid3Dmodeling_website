@@ -1436,6 +1436,14 @@
                                     <p class="text-[10px] text-orange-600 mt-2">※選択した決済方法の手数料が概算見積もりに加算されます。</p>
                                 </div>
                             </div>
+
+                            <label class="cursor-pointer relative block bg-white">
+                                <input type="radio" name="paymentMethod" value="paypal" class="custom-radio sr-only" required>
+                                <div class="border-2 border-gray-200 rounded-xl p-4 transition-colors hover:border-orange-200 flex items-center">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0 transition-colors flex items-center justify-center"><div class="w-2 h-2 rounded-full bg-white"></div></div>
+                                    <span class="font-bold text-gray-900 text-sm">PayPal (海外のクライアント様専用)</span>
+                                </div>
+                            </label>
                         </div>
                     </div>
 
@@ -2092,7 +2100,7 @@
                 referenceText = `後日提出予定\n予定: ${planMap[getVal('referenceDataPlan')]}\n提出時期: ${getVal('referenceDataTiming')}`;
             }
 
-            const paymentMap = { 'bank_transfer': '指定口座振り込み（ゆうちょ銀行）', 'tsunagu': '仲介サイト「つなぐ」' };
+            const paymentMap = { 'bank_transfer': '指定口座振り込み（ゆうちょ銀行）', 'tsunagu': '仲介サイト「つなぐ」', 'paypal': 'PayPal (海外のクライアント様専用)' };
             let paymentText = paymentMap[getVal('paymentMethod')];
             
             let text = `【お見積もりシミュレーション結果】\n\n`;
